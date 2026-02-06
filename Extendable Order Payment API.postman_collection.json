@@ -1,0 +1,625 @@
+{
+  "info": {
+    "_postman_id": "b2b94007-6263-4094-ac27-c1b5b4f94515",
+    "name": "Extendable Order Payment API",
+    "description": "# 📄 Get started here\n\nThis template contains a boilerplate for documentation that you can quickly customize and reuse.\n\n## 🔖 How to use this template\n\n- Replace the content given brackets (()) with your API's details.\n- Tips are formatted in `codespan` - feel free to read and remove them.\n    \n\n---\n\n`Start with a brief overview of what your API offers.`\n\nThe ((product name)) provides many API products, tools, and resources that enable you to ((add product value here)).\n\n`You can also list the APIs you offer, link to the relevant pages, or do both in this section.`\n\n## **Getting started guide**\n\n`List the steps or points required to start using your APIs. Make sure to cover everything required to reach success with your API as quickly as possible.`\n\nTo start using the ((add APIs here)), you need to -\n\n`The points given below are from The Postman API's documentation. You can reference it to write your own getting started guide.`\n\n- You must use a valid API Key to send requests to the API endpoints. You can get your API key from Postman's [integrations dashboard](https://go.postman.co/settings/me/api-keys).\n- The API has [rate and usage limits](https://learning.postman.com/docs/developer/postman-api/postman-api-rate-limits/).\n- The API only responds to HTTPS-secured communications. Any requests sent via HTTP return an HTTP 301 redirect to the corresponding HTTPS resources.\n- The API returns request responses in JSON format. When an API request returns an error, it is sent in the JSON response as an error key.\n    \n\n## Authentication\n\n`Add details on the authorization keys/tokens required, steps that cover how to get them, and the relevant error codes.`\n\nThe ((product name)) API uses ((add your API's authorization type)) for authentication.\n\n`The details given below are from the Postman API's documentation. You can reference it to write your own authentication section.`\n\nPostman uses API keys for authentication. You can generate a Postman API key in the [API keys](https://postman.postman.co/settings/me/api-keys) section of your Postman account settings.\n\nYou must include an API key in each request to the Postman API with the X-Api-Key request header.\n\n### Authentication error response\n\nIf an API key is missing, malformed, or invalid, you will receive an HTTP 401 Unauthorized response code.\n\n## Rate and usage limits\n\n`Use this section to cover your APIs' terms of use. Include API limits, constraints, and relevant error codes, so consumers understand the permitted API usage and practices.`\n\n`The example given below is from The Postman API's documentation. Use it as a reference to write your APIs' terms of use.`\n\nAPI access rate limits apply at a per-API key basis in unit time. The limit is 300 requests per minute. Also, depending on your plan, you may have usage limits. If you exceed either limit, your request will return an HTTP 429 Too Many Requests status code.\n\nEach API response returns the following set of headers to help you identify your use status:\n\n| Header | Description |\n| --- | --- |\n| `X-RateLimit-Limit` | The maximum number of requests that the consumer is permitted to make per minute. |\n| `X-RateLimit-Remaining` | The number of requests remaining in the current rate limit window. |\n| `X-RateLimit-Reset` | The time at which the current rate limit window resets in UTC epoch seconds. |\n\n### 503 response\n\nAn HTTP `503` response from our servers indicates there is an unexpected spike in API access traffic. The server is usually operational within the next five minutes. If the outage persists or you receive any other form of an HTTP `5XX` error, [contact support](https://support.postman.com/hc/en-us/requests/new/).\n\n### **Need some help?**\n\n`Add links that customers can refer to whenever they need help.`\n\nIn case you have questions, go through our tutorials ((link to your video or help documentation here)). Or visit our FAQ page ((link to the relevant page)).\n\nOr you can check out our community forum, there’s a good chance our community has an answer for you. Visit our developer forum ((link to developer forum)) to review topics, ask questions, and learn from others.\n\n`You can also document or add links to libraries, code examples, and other resources needed to make a request.`",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "7918430"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "Anas",
+                  "type": "text",
+                  "uuid": "5d62263f-9845-47e5-ae39-81cf1ccaa708"
+                },
+                {
+                  "key": "email",
+                  "value": "anas@test.com",
+                  "type": "text",
+                  "uuid": "2dad63bb-5d24-44a7-9c41-351944361786"
+                },
+                {
+                  "key": "password",
+                  "value": "123456",
+                  "type": "text",
+                  "uuid": "0cd6c0a2-0802-45d9-a1ed-2cf06236711a"
+                },
+                {
+                  "key": "password_confirmation",
+                  "value": "123456",
+                  "type": "text",
+                  "uuid": "984f18e1-9aa4-4587-9c15-470b4fc6b51c"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/register",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzcwMzg3OTM0LCJleHAiOjE3NzAzOTE1MzQsIm5iZiI6MTc3MDM4NzkzNCwianRpIjoiQWVmUkRuelJNQkxlZDJKWiIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.wbNtP7LRNSRr3TxmorAEKiO5CeCA7D7DbDtLyOvWL18",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "email",
+                  "value": "anas@test.com",
+                  "type": "text",
+                  "uuid": "9b720e69-b3f8-475e-a2a7-a99640d65d8a"
+                },
+                {
+                  "key": "password",
+                  "value": "123456",
+                  "type": "text",
+                  "uuid": "1398f882-28c7-4950-8070-eb6c18fdbc5a"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/login",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Get All Orders",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzcwMzg4MDMyLCJleHAiOjE3NzAzOTE2MzIsIm5iZiI6MTc3MDM4ODAzMiwianRpIjoiUlJZZG9Ea3hwcjRXZUx5YyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.CSX6ncEGygiHRwn1qrinxdMT5JltYBPz0cnU64kbcg0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "Product Updated",
+                  "type": "text",
+                  "uuid": "1b727c70-6d14-4fb4-a6aa-6d4cd9975d77"
+                },
+                {
+                  "key": "price",
+                  "value": "25.25",
+                  "type": "text",
+                  "uuid": "9b891ddc-8290-49f0-8f05-8e7f04129db2"
+                },
+                {
+                  "key": "quantity",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "8834581f-5a4b-48a0-a386-c18209dceec4"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/orders",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Orders by Status",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzcwMzg4MDMyLCJleHAiOjE3NzAzOTE2MzIsIm5iZiI6MTc3MDM4ODAzMiwianRpIjoiUlJZZG9Ea3hwcjRXZUx5YyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.CSX6ncEGygiHRwn1qrinxdMT5JltYBPz0cnU64kbcg0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "Product Updated",
+                  "type": "text",
+                  "uuid": "1b727c70-6d14-4fb4-a6aa-6d4cd9975d77"
+                },
+                {
+                  "key": "price",
+                  "value": "25.25",
+                  "type": "text",
+                  "uuid": "9b891ddc-8290-49f0-8f05-8e7f04129db2"
+                },
+                {
+                  "key": "quantity",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "8834581f-5a4b-48a0-a386-c18209dceec4"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/orders?status=pending",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "orders"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "pending",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Order",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzcwMzg4MDMyLCJleHAiOjE3NzAzOTE2MzIsIm5iZiI6MTc3MDM4ODAzMiwianRpIjoiUlJZZG9Ea3hwcjRXZUx5YyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.CSX6ncEGygiHRwn1qrinxdMT5JltYBPz0cnU64kbcg0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "Product 1",
+                  "type": "text",
+                  "uuid": "b2db72fc-f76e-4646-95e5-610b75e41905"
+                },
+                {
+                  "key": "price",
+                  "value": "55.55",
+                  "type": "text",
+                  "uuid": "df6a6b0a-b32a-401e-83a4-6206e9d0bfd3"
+                },
+                {
+                  "key": "quantity",
+                  "value": "100",
+                  "type": "text",
+                  "uuid": "0ff5c5eb-fb36-460e-8330-3f80ed035c8b"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/orders",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Order",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzcwMzg4MDMyLCJleHAiOjE3NzAzOTE2MzIsIm5iZiI6MTc3MDM4ODAzMiwianRpIjoiUlJZZG9Ea3hwcjRXZUx5YyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.CSX6ncEGygiHRwn1qrinxdMT5JltYBPz0cnU64kbcg0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "Product Updated",
+                  "type": "text",
+                  "uuid": "1b727c70-6d14-4fb4-a6aa-6d4cd9975d77"
+                },
+                {
+                  "key": "price",
+                  "value": "25.25",
+                  "type": "text",
+                  "uuid": "9b891ddc-8290-49f0-8f05-8e7f04129db2"
+                },
+                {
+                  "key": "quantity",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "8834581f-5a4b-48a0-a386-c18209dceec4"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/orders/4",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "orders",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Order",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzcwMzg4MDMyLCJleHAiOjE3NzAzOTE2MzIsIm5iZiI6MTc3MDM4ODAzMiwianRpIjoiUlJZZG9Ea3hwcjRXZUx5YyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.CSX6ncEGygiHRwn1qrinxdMT5JltYBPz0cnU64kbcg0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/orders/4",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "orders",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Confirm Order",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzcwMzg4MDMyLCJleHAiOjE3NzAzOTE2MzIsIm5iZiI6MTc3MDM4ODAzMiwianRpIjoiUlJZZG9Ea3hwcjRXZUx5YyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.CSX6ncEGygiHRwn1qrinxdMT5JltYBPz0cnU64kbcg0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/orders/4/confirm",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "orders",
+                "4",
+                "confirm"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cancel Order",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzcwMzg4MDMyLCJleHAiOjE3NzAzOTE2MzIsIm5iZiI6MTc3MDM4ODAzMiwianRpIjoiUlJZZG9Ea3hwcjRXZUx5YyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.CSX6ncEGygiHRwn1qrinxdMT5JltYBPz0cnU64kbcg0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/orders/4/cancel",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "orders",
+                "4",
+                "cancel"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Payments",
+      "item": [
+        {
+          "name": "Process Payment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzcwMzg4MDMyLCJleHAiOjE3NzAzOTE2MzIsIm5iZiI6MTc3MDM4ODAzMiwianRpIjoiUlJZZG9Ea3hwcjRXZUx5YyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.CSX6ncEGygiHRwn1qrinxdMT5JltYBPz0cnU64kbcg0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "payment_gateway_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "bfcdfe5a-6476-40f3-bbcf-b3d77659c4fc"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/orders/4/pay",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "orders",
+                "4",
+                "pay"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Payments",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzcwMzg4MDMyLCJleHAiOjE3NzAzOTE2MzIsIm5iZiI6MTc3MDM4ODAzMiwianRpIjoiUlJZZG9Ea3hwcjRXZUx5YyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.CSX6ncEGygiHRwn1qrinxdMT5JltYBPz0cnU64kbcg0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/payments",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "payments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Order Payments",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzcwMzg4MDMyLCJleHAiOjE3NzAzOTE2MzIsIm5iZiI6MTc3MDM4ODAzMiwianRpIjoiUlJZZG9Ea3hwcjRXZUx5YyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.CSX6ncEGygiHRwn1qrinxdMT5JltYBPz0cnU64kbcg0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/orders/4/payments",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "orders",
+                "4",
+                "payments"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-Key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://farming-simulator.pstmn.io"
+    }
+  ]
+}
