@@ -39,7 +39,7 @@ A Laravel-based RESTful API for managing orders and payments with extensible pay
 
 **1. Clone the repository**
 ```
-git clone <https://github.com/proganas/extendable-order-payment-api>
+git clone https://github.com/proganas/extendable-order-payment-api
 cd extendable-order-payment
 ```
 
